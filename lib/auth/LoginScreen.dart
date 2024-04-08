@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:new_app/Compo/Const.dart';
 import 'package:new_app/Compo/CustomButton.dart';
 import 'package:new_app/Compo/Forgot.dart';
@@ -55,22 +54,24 @@ class _LoginState extends State<Login> {
               espace,
               CustomButton(
                 text: "Login",
-                onpressed: () {},
+                onpressed: () {
+                  Navigator.pushReplacementNamed(context, 'NavBar');
+                },
               ),
               const SizedBox(
                 height: 10,
               ),
-              ForgotText(),
+              const ForgotText(),
               const SizedBox(height: 100),
               const CustomSep(),
               const IconSocial(),
               const SizedBox(height: 30),
               CustomTextSpan(
-                textone: "Don't have account? ",
-                texttwo: "Register",
-                tap: () {
-                Navigator.pushReplacementNamed(context, 'Signup');
-              })
+                  textone: "Don't have account? ",
+                  texttwo: "Register",
+                  tap: () {
+                    Navigator.pushReplacementNamed(context, 'Signup');
+                  })
             ],
           ),
         ),

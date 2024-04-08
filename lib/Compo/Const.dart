@@ -8,3 +8,4 @@ const Image1 = ("assets/images/LogoNews.png");
 const espace = SizedBox(height: 30);
 const ColorButton = Colors.lightBlue;
 const IconData facebook = IconData(0xe255, fontFamily: 'MaterialIcons');
+
