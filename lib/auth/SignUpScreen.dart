@@ -86,7 +86,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 6,
               ),
               const CustomRadioButton(),
-              const SizedBox(height: 10),
+              const SizedBox(height: 40),
               CustomButton(
                   text: 'Create',
                   onpressed: () {

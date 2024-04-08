@@ -64,8 +64,11 @@ class _LoginState extends State<Login> {
               const SizedBox(height: 100),
               const CustomSep(),
               const IconSocial(),
-              const SizedBox(height: 37),
-              CustomTextSpan(tap: () {
+              const SizedBox(height: 30),
+              CustomTextSpan(
+                textone: "Don't have account? ",
+                texttwo: "Register",
+                tap: () {
                 Navigator.pushReplacementNamed(context, 'Signup');
               })
             ],
