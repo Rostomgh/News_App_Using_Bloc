@@ -86,10 +86,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 6,
               ),
               const CustomRadioButton(),
-          
-            const SizedBox(height: 10),
-             CustomButton(text: 'Create',onpressed: (){})  
-            ],),
+              const SizedBox(height: 10),
+              CustomButton(
+                  text: 'Create',
+                  onpressed: () {
+                    Navigator.pushNamed(context, 'Login');
+                  })
+            ],
+          ),
         ),
       ),
     );

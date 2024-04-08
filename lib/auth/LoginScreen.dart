@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:new_app/Compo/Const.dart';
 import 'package:new_app/Compo/CustomButton.dart';
+import 'package:new_app/Compo/Forgot.dart';
+import 'package:new_app/Compo/Separation.dart';
 import 'package:new_app/Compo/TextInputField.dart';
+import 'package:new_app/Compo/TextSpan.dart';
 import 'package:new_app/Compo/social_button.dart';
 
 class Login extends StatefulWidget {
@@ -51,42 +55,19 @@ class _LoginState extends State<Login> {
               espace,
               CustomButton(
                 text: "Login",
-                onpressed: () {
-                  Navigator.pushReplacementNamed(context, 'Signup');
-                },
+                onpressed: () {},
               ),
               const SizedBox(
-                height: 7,
+                height: 10,
               ),
-              const Text(
-                "Forgot password?",
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-              ),
+              ForgotText(),
               const SizedBox(height: 100),
-              const Divider(
-                thickness: 2,
-              ),
+              const CustomSep(),
               const IconSocial(),
-              SizedBox(height: 37),
-              const Center(
-                child: Text.rich(TextSpan(children: [
-                  TextSpan(
-                    text: "Don't have account",
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                    ),
-                  ),
-                  TextSpan(
-                    text: "Register",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.black,
-                    ),
-                  )
-                ])),
-              )
+              const SizedBox(height: 37),
+              CustomTextSpan(tap: () {
+                Navigator.pushReplacementNamed(context, 'Signup');
+              })
             ],
           ),
         ),
