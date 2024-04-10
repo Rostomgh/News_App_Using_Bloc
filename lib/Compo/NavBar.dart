@@ -1,10 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:new_app/Compo/News_Card/Card.dart';
 import 'package:new_app/Compo/LIstNavBar.dart';
 import 'package:new_app/Logic/Nav_Bar/nav_bar_bloc.dart';
-import 'package:new_app/Routes/ErrorScreen.dart';
 import 'package:new_app/Screen/HomePage.dart';
+import 'package:new_app/Screen/SearchScreen.dart';
 
 class CustomNavBar extends StatefulWidget {
   const CustomNavBar({super.key});
@@ -16,8 +17,10 @@ class CustomNavBar extends StatefulWidget {
 class _CustomNavBarState extends State<CustomNavBar> {
   int select = 0;
   List<Widget> Screen = [
-    const HomeScreen(),
-    const ErrorRoute(),
+    NewsApp(),
+    const SearchScreen(),
+    const Text('miss',style: TextStyle(color: Colors.amber),),
+    const Text('chardon'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -26,6 +29,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
         return Scaffold(
             body: Screen.elementAt(state.tabindex),
             bottomNavigationBar: CurvedNavigationBar(
+              height: 50,
               onTap: (index) {
                   BlocProvider.of<NavBarBloc>(context)
                   .add(tabChange(tabindex: index));
