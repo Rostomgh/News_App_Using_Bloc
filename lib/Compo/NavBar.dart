@@ -1,7 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_app/Compo/News_Card/Card.dart';
+import 'package:new_app/Compo/Card.dart';
+
 import 'package:new_app/Compo/LIstNavBar.dart';
 import 'package:new_app/Logic/Nav_Bar/nav_bar_bloc.dart';
 import 'package:new_app/Screen/HomePage.dart';
