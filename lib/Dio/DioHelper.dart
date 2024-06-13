@@ -14,26 +14,20 @@ class Helpers {
         receiveDataWhenStatusError: true,
         contentType: Headers.jsonContentType,
         responseType: ResponseType.json));
-  
-}
+  }
+
 //get Data
-  static Future<Response>GetData({
+  static Future<Response> GetData({
     required String url,
-    Map<String,dynamic>? query,
+    Map<String, dynamic>? query,
     String? token,
-
-
-  })async
-  {
-    return await Helpers.dio.get(url,queryParameters: query,
-    options: Options(
-      headers: {
-             'authorization': "Bearer $token",
-            "Content-Type": "application/json",
-            "Accept-Language": "EN",
-      }
-    )
-    
-    
-    );
-  }}
+  }) async {
+    return await Helpers.dio.get(url,
+        queryParameters: query,
+        options: Options(headers: {
+          'authorization': "Bearer $token",
+          "Content-Type": "application/json",
+          "Accept-Language": "EN",
+        }));
+  }
+}

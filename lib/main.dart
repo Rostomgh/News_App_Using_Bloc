@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:new_app/Dio/BlocObserve.dart';
+import 'package:new_app/Dio/DioHelper.dart';
 import 'package:new_app/Logic/Nav_Bar/nav_bar_bloc.dart';
 import 'package:new_app/Logo.dart';
 import 'package:new_app/Routes/OngeneratrRoute.dart';
 
-void main() {
+void main() async {
+  await Helpers.init();
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
