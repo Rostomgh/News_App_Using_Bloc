@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:new_app/Compo/Card.dart';
 import 'package:new_app/Dio/Bloc%20Dio/bloc/dio_bloc.dart';
 
@@ -16,9 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     // Trigger the event to fetch data for DioBloc
-    context.read<DioBloc>().add(DioBloc() as DioEvent);
-    // Uncomment and use if you have another Bloc
-    // context.read<AnotherBloc>().add(SomeEvent());
+    context.read<DioBloc>().add(GetDioData());
   }
 
   @override
@@ -31,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Icon(Icons.location_pin),
             SizedBox(width: 2),
             Text(
-              'G.T.ROAD,KOLKATA',
+              'G.T.ROAD, KOLKATA',
               style: TextStyle(fontSize: 15),
             ),
           ],
@@ -53,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: BlocBuilder<DioBloc, DioState>(
         builder: (context, state) {
           if (state is DioLoading) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (state is DioLoaded) {
             return ListView.builder(
               itemCount: state.artical.length,
@@ -68,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
           } else if (state is DioError) {
             return Center(child: Text('Error: ${state.error}'));
           } else {
-            return Center(child: Text('No data'));
+            return const Center(child: Text('No data'));
           }
         },
       ),

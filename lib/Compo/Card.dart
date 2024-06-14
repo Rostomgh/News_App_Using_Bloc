@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_app/Compo/News_Card/NewsCardWidget.dart';
 
-class NewsCard {
+
+/*class NewsCard {
   final String title;
   final String imageUrl;
 
@@ -30,5 +30,5 @@ class NewsApp extends StatelessWidget {
       ),
     );
   }
-}
+}*/
 

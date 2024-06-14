@@ -1,7 +1,7 @@
   import 'package:new_app/Compo/Card.dart';
 
 
-final List<NewsCard> news = [
+/*final List<NewsCard> news = [
     NewsCard(
       title: 'Breaking News',
       imageUrl: 'assets/news_img/tesla.jpg',
@@ -27,3 +27,4 @@ final List<NewsCard> news = [
       imageUrl: 'assets/images/LogoNews.png',
     ),
   ];
+*/

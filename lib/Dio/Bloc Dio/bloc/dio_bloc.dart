@@ -15,7 +15,7 @@ class DioBloc extends Bloc<DioEvent, DioState> {
     emit(DioLoading());
     try {
       final response =
-          await Helpers.GetData(url: 'v2/top-headlines', query: {
+          await Helpers.getData(url: 'v2/top-headlines', query: {
         'country': 'us',
         'apiKey': 'YOUR_API_KEY', 
       });

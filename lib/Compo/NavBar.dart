@@ -18,7 +18,7 @@ class CustomNavBar extends StatefulWidget {
 class _CustomNavBarState extends State<CustomNavBar> {
   int select = 0;
   List<Widget> Screen = [
-    NewsApp(),
+    HomeScreen(),
     const SearchScreen(),
     const Text('miss',style: TextStyle(color: Colors.amber),),
     const Text('chardon'),
