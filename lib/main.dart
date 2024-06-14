@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:new_app/Dio/Bloc%20Dio/bloc/dio_bloc.dart';
 import 'package:new_app/Dio/BlocObserve.dart';
 import 'package:new_app/Dio/DioHelper.dart';
 import 'package:new_app/Logic/Nav_Bar/nav_bar_bloc.dart';
@@ -17,8 +18,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NavBarBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => NavBarBloc(),
+        ),
+        BlocProvider(
+          create: (context) => DioBloc(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.light(useMaterial3: true),

@@ -17,7 +17,7 @@ class DioBloc extends Bloc<DioEvent, DioState> {
       final response =
           await Helpers.GetData(url: 'v2/top-headlines', query: {
         'country': 'us',
-        'apiKey': 'YOUR_API_KEY', // Replace with your actual API key
+        'apiKey': 'YOUR_API_KEY', 
       });
       List<Artical> articles = (response.data['articles'] as List)
           .map((article) => Artical.fromJson(article))
